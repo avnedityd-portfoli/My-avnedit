@@ -1,0 +1,63 @@
+.avn-plans-subheading {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 56px 0 24px;
+}
+
+.avn-plans-steps {
+  max-width: 620px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.avn-plans-step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 18px 20px;
+}
+
+.avn-plans-step-num {
+  font-family: var(--avn-font-display);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--avn-cyan);
+  background: rgba(53, 217, 255, 0.1);
+  border-radius: 10px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avn-plans-step strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.avn-plans-step p {
+  color: var(--avn-muted);
+  font-size: 14px;
+}
+
+.avn-plans-notes {
+  max-width: 620px;
+  margin: 32px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.avn-plans-notes p {
+  font-size: 13.5px;
+  color: var(--avn-muted);
+  border-left: 2px solid var(--avn-border);
+  padding-left: 14px;
+  line-height: 1.6;
+}

@@ -1,0 +1,246 @@
+/* ==========================================================
+   AVNEDIT — GLOBAL DESIGN SYSTEM
+   All brand colors, spacing and typography tokens live here.
+   Change a value once, it updates across the whole site.
+========================================================== */
+
+:root {
+  /* Brand colors — locked palette */
+  --avn-bg: #050b18;
+  --avn-bg-elevated: #081026;
+  --avn-card: #0b1630;
+  --avn-card-top: #0e1c3d;
+  --avn-blue: #168cff;
+  --avn-cyan: #35d9ff;
+  --avn-sky: #72d9ff;
+  --avn-gold: #ffd84d;
+  --avn-white: #f5f9ff;
+  --avn-muted: #8fa3c9;
+  --avn-danger: #ff6b6b;
+  --avn-success: #4ade80;
+
+  --avn-border: rgba(114, 217, 255, 0.16);
+  --avn-border-strong: rgba(114, 217, 255, 0.32);
+  --avn-gold-border: rgba(255, 216, 77, 0.5);
+
+  /* Typography */
+  --avn-font-display: "Space Grotesk", "Inter", -apple-system, sans-serif;
+  --avn-font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing scale */
+  --avn-space-1: 4px;
+  --avn-space-2: 8px;
+  --avn-space-3: 12px;
+  --avn-space-4: 16px;
+  --avn-space-5: 24px;
+  --avn-space-6: 32px;
+  --avn-space-7: 48px;
+  --avn-space-8: 64px;
+
+  --avn-radius-sm: 10px;
+  --avn-radius-md: 16px;
+  --avn-radius-lg: 20px;
+  --avn-radius-xl: 24px;
+
+  --avn-nav-height: 68px;
+  --avn-bottom-nav-height: 74px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--avn-bg);
+  color: var(--avn-white);
+  font-family: var(--avn-font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--avn-font-display);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--avn-font-body);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Focus states — visible everywhere, accessibility requirement */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--avn-cyan);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Shared layout utilities */
+.avn-container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--avn-space-5);
+}
+
+.avn-page {
+  min-height: calc(100vh - var(--avn-bottom-nav-height));
+  padding-top: calc(var(--avn-nav-height) + var(--avn-space-6));
+  padding-bottom: var(--avn-space-8);
+}
+
+.avn-section-heading {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto var(--avn-space-7);
+}
+
+.avn-section-heading h2 {
+  font-size: clamp(26px, 5vw, 36px);
+  font-weight: 700;
+}
+
+.avn-section-heading p {
+  margin-top: var(--avn-space-3);
+  color: var(--avn-muted);
+  font-size: 16px;
+}
+
+.avn-eyebrow {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--avn-cyan);
+  background: rgba(53, 217, 255, 0.1);
+  border: 1px solid var(--avn-border);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: var(--avn-space-4);
+}
+
+.avn-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.avn-btn:active {
+  transform: scale(0.97);
+}
+
+.avn-btn-primary {
+  background: linear-gradient(90deg, var(--avn-blue), var(--avn-cyan));
+  color: #04101f;
+}
+
+.avn-btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+.avn-btn-secondary {
+  background: rgba(22, 140, 255, 0.1);
+  border-color: var(--avn-border);
+  color: var(--avn-white);
+}
+
+.avn-btn-secondary:hover {
+  background: rgba(22, 140, 255, 0.18);
+  border-color: var(--avn-border-strong);
+}
+
+.avn-btn-ghost {
+  background: transparent;
+  border-color: var(--avn-border);
+  color: var(--avn-white);
+}
+
+.avn-btn-full {
+  width: 100%;
+}
+
+.avn-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.avn-card {
+  background: linear-gradient(180deg, var(--avn-card-top), var(--avn-card));
+  border: 1px solid var(--avn-border);
+  border-radius: var(--avn-radius-lg);
+  box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.65);
+}
+
+.avn-scroll-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.avn-scroll-reveal.avn-in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Error / helper text used across forms */
+.avn-field-error {
+  color: var(--avn-danger);
+  font-size: 12.5px;
+  margin-top: 6px;
+}
+
+.avn-field-hint {
+  color: var(--avn-muted);
+  font-size: 12.5px;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+  .avn-page {
+    padding-bottom: calc(var(--avn-bottom-nav-height) + var(--avn-space-6));
+  }
+}
